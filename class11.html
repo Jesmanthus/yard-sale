@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --very-light-pink: #C7C7C7;
+      --very-light-black: #898989;
+      --light-black: #3E3E3E;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 -2px 6px var(--very-light-pink);
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    .navbar-left ul,
+    .navbar-right ul {
+      list-style: none;
+      align-items: center;
+      padding: 0;
+    }
+
+    .navbar-left ul,
+    .navbar-right li:first-child {
+      display: none;
+    }
+
+    .navbar-left ul {
+      margin-left: 40px;
+    }
+
+    .navbar-left li {
+      margin-right: 4px;
+    }
+
+    .navbar-left a {
+      color: var(--very-light-pink);
+      font-size: var(--md);
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 4px 12px;
+    }
+
+    .navbar-left a:hover {
+      color: var(--hospital-green);
+      border-color: var(--hospital-green);
+    }
+
+    .navbar-right li:first-child{
+      margin-right: 32px;
+      font-size: var(--sm);
+      font-weight: 300;
+    }
+
+    .navbar-shopping-card {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .navbar-shopping-card span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: var(--hospital-green);
+      border-radius: 50%;
+      position: absolute;
+      right: -2px;
+    }
+
+
+    @media (min-width: 920px) {
+
+      .icon-menu {
+        display: none;
+      }
+
+      .navbar-left,
+      .navbar-right {
+        display: flex;
+      }
+
+      .navbar-left ul,
+      .navbar-right ul {
+        display: flex;
+      }
+
+      .navbar-right li:first-child {
+        display: block;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="./icons/icon_menu.svg" alt="" class="icon-menu">
+
+    <div class="navbar-left">
+      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+      <ul>
+        <li><a href="">All</a></li>
+        <li><a href="">Clothes</a></li>
+        <li><a href="">Electronics</a></li>
+        <li><a href="">Furniture</a></li>
+        <li><a href="">Toys</a></li>
+        <li><a href="">Others</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-right">
+      <ul>
+        <li>jessel@example.com</li>
+        <li class="navbar-shopping-card">
+          <img src="./icons/icon_shopping_cart.svg" alt="">
+          <span></span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>
