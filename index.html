@@ -80,19 +80,10 @@
     </div>
   </nav>
 
-  <aside class="product-details">
+  <aside id="shoppingCartContainer" class="">
     <div class="my-order">
       <div class="my-order-container">
-        <h1 class="title"><img src="./icons/flechita.svg" alt=""> My order</h1>
-  
-        <div class="shopping-card">
-          <figure>
-            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?" alt="">
-          </figure>
-          <p>Bike</p>
-          <p>$150.00</p>
-          <img src="./icons/icon_close.png" alt="">
-        </div>
+        <h1 class="title">My order</h1>
   
         <div class="shopping-card">
           <figure>
@@ -132,6 +123,35 @@
           Checkout
         </button>
       </div>
+    </div>
+  </aside> 
+
+  <aside  id="productDetail" class="inactive">
+    <div class="product-detail-close">
+      <img src="./icons/icon_close.png" alt="close">
+    </div>
+    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?" alt="bike">
+    <div class="">
+      <ul class="carrusel">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="details-container">
+      <p class="product-price">
+        $120,00
+      </p>
+      <p class="product-title">
+        Retro Bike
+      </p>
+      <p class="product-description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta fuga veniam corporis quis repellat laudantium ab error eveniet suscipit et unde reiciendis omnis laboriosam vero harum exercitationem, quisquam odit dolorem!
+      </p>
+      <button class="primary-button add-to-cart-button">
+        <img src="./icons/bt_add_to_cart.svg" alt="">
+        Add to cart
+      </button>
     </div>
   </aside>
 

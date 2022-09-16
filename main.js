@@ -3,58 +3,10 @@ const menuCartIcon = document.querySelector('.navbar-shopping-card')
 const iconMenu = document.querySelector('.icon-menu')
 const desktopMenu = document.querySelector('.desktop-menu')
 const mobileMenu = document.querySelector('.mobile-menu')
-const asideProductDetails = document.querySelector('.product-details')
+const asideShoppingCard = document.querySelector('#shoppingCartContainer')
+const asideProductDetail = document.querySelector('#productDetail')
+const asideProductDetailClose = document.querySelector('.product-detail-close')
 const cardsContainer = document.querySelector('.cards-container')
-
-iconMenu.addEventListener('click', toggleMobileMenu)
-menuEmail.addEventListener('click', toggleDesktopMenu)
-menuCartIcon.addEventListener('click', toggleAsideProductDetails)
-
-function toggleDesktopMenu() {
-  desktopMenu.classList.toggle('inactive')
-  asideProductDetails.classList.add('inactive')
-  asideProductDetails.classList.remove('is-actived')
-
-  if(desktopMenu.classList.contains('inactive')) {
-    asideProductDetails.classList.remove('inactive')
-  }
-}
-
-/*
-<div class="product-card">
-        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?" alt="" class="product-img">
-        <div class="product-info">
-          <div>
-            <p>$120,00</p>
-            <p>Bike</p>
-          </div>
-          <figure>
-            <img src="./icons/bt_add_to_cart.svg" alt="">
-          </figure>
-        </div>
-</div>
-*/
-
-function toggleMobileMenu() {
-  mobileMenu.classList.remove('inactive')
-  mobileMenu.classList.toggle('is-actived')
-  asideProductDetails.classList.remove('is-actived')
-}
-
-function toggleAsideProductDetails() {
-
-  if(!desktopMenu.classList.contains('inactive')) {
-    desktopMenu.classList.add('inactive')
-    asideProductDetails.classList.remove('inactive')
-    asideProductDetails.classList.add('is-actived')
-    mobileMenu.classList.remove('is-actived')
-  } else {
-    asideProductDetails.classList.toggle('is-actived')
-    mobileMenu.classList.remove('is-actived')
-    desktopMenu.classList.add('inactive')
-  }
-}
-
 const productList = []
 
 productList.push({
@@ -64,13 +16,13 @@ productList.push({
 })
 
 productList.push({
-  img: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?',
+  img: 'https://cdn.pocket-lint.com/r/s/x1920/assets/images/157226-laptops-review-microsoft-surface-laptop-4-review-image1-shvxgffygd.jpg',
   name: 'Laptop',
   price: 880,
 })
 
 productList.push({
-  img: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?',
+  img: 'https://i.blogs.es/03ddaf/tcl/840_560.jpg',
   name: 'Smart TV',
   price: 120,
 })
@@ -81,6 +33,7 @@ for (product of productList) {
 
   const productImg = document.createElement('img')
   productImg.setAttribute('src', product.img)
+  productImg.addEventListener('click', toggleProductDetail)
 
   const productInfo = document.createElement('div')
   productInfo.classList.add('product-info')
@@ -108,4 +61,40 @@ for (product of productList) {
   productCard.appendChild(productInfo)
 
   cardsContainer.appendChild(productCard)
+}
+
+iconMenu.addEventListener('click', toggleMobileMenu)
+menuEmail.addEventListener('click', toggleDesktopMenu)
+menuCartIcon.addEventListener('click', toggleAsideShoppingCard)
+asideProductDetailClose.addEventListener('click', removeProductDetail)
+
+function toggleDesktopMenu() {
+  desktopMenu.classList.toggle('inactive')
+  asideShoppingCard.classList.add('inactive')
+  asideProductDetail.classList.add('inactive')
+  asideShoppingCard.classList.remove('is-actived')
+}
+
+function toggleMobileMenu() {
+  mobileMenu.classList.toggle('is-actived')
+  asideShoppingCard.classList.remove('is-actived')
+  asideProductDetail.classList.add('inactive')
+}
+
+function toggleAsideShoppingCard() {
+  asideShoppingCard.classList.toggle('is-actived')
+  asideShoppingCard.classList.remove('inactive')
+  mobileMenu.classList.remove('is-actived')
+  asideProductDetail.classList.add('inactive')
+  desktopMenu.classList.add('inactive')
+}
+
+function toggleProductDetail() {
+  asideProductDetail.classList.remove('inactive')
+  asideShoppingCard.classList.remove('is-actived')
+  desktopMenu.classList.add('inactive')
+}
+
+function removeProductDetail() {
+  asideProductDetail.classList.add('inactive')
 }
